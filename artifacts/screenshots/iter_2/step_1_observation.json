@@ -1,0 +1,13 @@
+{
+  "text_visible": "",
+  "interactive_targets": [],
+  "console_errors": [],
+  "verification": {
+    "dom_changed": false,
+    "text_changed": false,
+    "new_console_errors": [],
+    "dialogs": [],
+    "before_sig": "",
+    "after_sig": ""
+  }
+}

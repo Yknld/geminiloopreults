@@ -1,0 +1,64 @@
+**MANDATORY FIRST STEPS:**
+1.  **CHECK FILE EXISTENCE:** Verify `index.html` exists in the workspace. It is your starting template.
+2.  **EDIT ONLY:** Use the `edit` or `write` command to modify `index.html`. NEVER use `create` as it will fail or overwrite the template structure incorrectly.
+3.  **READ TEMPLATE:** Read the `index.html` file to understand the `modules` array structure, the `initModules` function, and the `interactiveElement` placeholder.
+
+**TASK: POPULATE THE COURSE CONTENT**
+
+You must modify the `modules` array in `index.html` to contain the following 3 modules based on the geometry notes. Replace the existing example module.
+
+**MODULE 1: The Circle: Anatomy & Formulas**
+- **title:** "The Circle: Anatomy & Formulas"
+- **videoId:** "O-cawByg2aA"
+- **explanation:** Write a clear explanation defining Center, Radius, Diameter (d=2r), Chord, and Tangent. Explain the formulas for Circumference (C=2πr) and Area (A=πr²).
+- **keyPoints:** Create an array of objects with text for: "Radius is distance from center to edge", "Diameter is 2 × Radius", "Circumference is distance around", "Area is space inside (πr²)".
+- **timeline:** Add an event: Date "250 BC", Title "Archimedes", Description "Approximated Pi closely using polygons."
+- **funFact:** "A circle encloses the maximum possible area for a given perimeter!"
+- **interactiveElement:** **CRITICAL: WRITE ACTUAL HTML/JS.** Create a "Circle Calculator" div. Include:
+  *   Input field `<input type='number' id='m1-radius' placeholder='Enter Radius'>`
+  *   Display areas `<div id='m1-results'>` for Diameter, Circumference, and Area.
+  *   A `<script>` block (inside the string) that listens for input on `#m1-radius` and updates the innerHTML of results with calculated values (Math.PI * r * r, etc.).
+  *   Add a "Checkpoint" section below the calculator with a simple question: "If diameter is 18, radius is?" with an input and a "Check" button that shows an alert or text feedback.
+
+**MODULE 2: Angles, Arcs & Sectors**
+- **title:** "Angles, Arcs & Sectors"
+- **videoId:** "Fzaof9cX-PM"
+- **explanation:** Explain Central Angles (vertex at center) vs Inscribed Angles (vertex on circle). Explain Arc Length formula ((θ/360)2πr) and Sector Area formula ((θ/360)πr²).
+- **keyPoints:** "Central Angle = Arc Measure", "Inscribed Angle = 1/2 Arc Measure", "Sector is like a pizza slice".
+- **timeline:** Add event: Date "440 BC", Title "Hippocrates of Chios", Description "First to calculate area of curvilinear figures (Lunes)."
+- **funFact:** "A radian is the angle size where the arc length is exactly equal to the radius."
+- **interactiveElement:** **CRITICAL: WRITE ACTUAL HTML/JS.** Create a "Sector Tool". Include:
+  *   Two inputs: Radius and Angle (degrees).
+  *   A "Calculate" button.
+  *   A result area displaying Arc Length and Sector Area.
+  *   JS logic to perform the math: `(angle/360) * Math.PI * r * r`.
+  *   Add a Boss Challenge question in HTML: "Find the area of a sector with r=6 and angle=60°" with a reveal answer button.
+
+**MODULE 3: Coordinate Geometry**
+- **title:** "Coordinate Geometry"
+- **videoId:** "" (Leave empty or use a placeholder)
+- **explanation:** Explain the Distance Formula (sqrt((x2-x1)² + (y2-y1)²)), Midpoint Formula (average of coords), and Slope (rise/run). Mention Parallel (same slope) vs Perpendicular (negative reciprocal) lines.
+- **keyPoints:** "Distance comes from Pythagorean Theorem", "Midpoint is the average", "Slope is Rise over Run", "Perpendicular slopes multiply to -1".
+- **timeline:** Add event: Date "1637", Title "René Descartes", Description "Published La Géométrie, linking algebra and geometry."
+- **funFact:** "Descartes invented coordinates to solve geometry problems using algebra!"
+- **interactiveElement:** **CRITICAL: WRITE ACTUAL HTML/JS.** Create a "Coordinate Lab". Include:
+  *   4 Inputs: x1, y1, x2, y2.
+  *   A button "Analyze Segment".
+  *   A display area showing: Distance, Midpoint, Slope, and Perpendicular Slope.
+  *   JS logic to compute these values when the button is clicked.
+
+**AUDIO GENERATION (TTS) - CRITICAL STEP:**
+1.  **API SETUP:** You have the Google Cloud TTS API key (`AIzaSyAnqAMhRipHwjaZYkKfcYjJ6ooqC-NhDsE`).
+2.  **SCRIPT:** Create a temporary Python script `generate_audio.py` that uses `google-cloud-texttospeech`.
+3.  **GENERATE:** Run this script to generate MP3 files for the Explanation, Key Points, Timeline, and Fun Fact for ALL 3 modules.
+   *   Naming convention: `audio-m1-explanation.mp3`, `audio-m1-keypoint-0.mp3`, etc.
+4.  **UPDATE OBJECTS:** Ensure the `audioSources` object in each module correctly points to these generated filenames.
+5.  **FALLBACK:** If generation fails, ensure the UI handles missing audio gracefully (or hide the buttons).
+
+**FINAL REVIEW:**
+- Did you edit `index.html`?
+- Did you create all 3 modules?
+- Is `interactiveElement` full of working HTML/JS (not placeholders)?
+- Did you generate audio files?
+
+**EXECUTE NOW.**
