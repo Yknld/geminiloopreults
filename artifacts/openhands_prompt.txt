@@ -1,0 +1,59 @@
+**MANDATORY FIRST STEPS:**
+1.  **Read the existing `index.html` file** in the workspace. This is your template.
+2.  **Edit `index.html` directly**. Do NOT create new HTML files. Do NOT create external CSS/JS files.
+3.  **Locate the `modules` array** in the JavaScript section of the template.
+
+**TASK: POPULATE THE COURSE CONTENT**
+Replace the existing example module in the `modules` array with the following 3 new modules based on the notes. Ensure all Math is rendered using KaTeX (e.g., `\\pi r^2`).
+
+**MODULE 1: Introduction to Circles**
+- **title**: "Introduction to Circles"
+- **videoId**: "O-cawByg2aA"
+- **explanation**: Explain the key parts of a circle: Center (fixed point), Radius (distance from center to edge), Diameter (width through center, d=2r), Chord (segment with endpoints on circle), and Tangent (touches at one point). Introduce the formulas: Circumference ($C = 2\\pi r$) and Area ($A = \\pi r^2$).
+- **keyPoints**: Create 4 points: "Radius (r) is distance from center", "Diameter (d) is 2 times radius", "Circumference is distance around ($2\\pi r$)", "Area is space inside ($\pi r^2$)".
+- **timeline**: Add one event: Year "250 BC", Title "Archimedes", Description "Approximated Pi using polygons.", Person "Archimedes".
+- **funFact**: "A rope tied around the Earth, if raised by just 1 foot all around, would only need to be about 6.28 feet longer!"
+- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:
+  1. An `<h3>` titled "Circle Calculator".
+  2. An `<input>` type number with id `calc-radius` and placeholder `Enter Radius (r)`.
+  3. A `<button>` that triggers a JS function to calculate Diameter, Circumference, and Area based on the input.
+  4. Three `<p>` tags to display the results (e.g., `id="res-d"`, `id="res-c"`, `id="res-a"`).
+  5. A mini-quiz: `<p>If Diameter = 18, Radius = ?</p>`, an input box, and a button that checks if value is 9 and shows "Correct!" or "Try again" in a span.
+  6. Include the `<script>` tag *inside* this string to handle the logic for these specific inputs.
+
+**MODULE 2: Angles, Arcs, and Sectors**
+- **title**: "Angles, Arcs, & Sectors"
+- **videoId**: "dBIlCD_JF9Q"
+- **explanation**: Differentiate between Central Angles (vertex at center, equal to arc) and Inscribed Angles (vertex on circle, half the arc). Explain Arc Length formula ($\frac{\theta}{360} \cdot 2\pi r$) and Sector Area formula ($\frac{\theta}{360} \cdot \pi r^2$).
+- **keyPoints**: Create 3 points: "Central Angle = Arc Measure", "Inscribed Angle = 1/2 Arc Measure", "Sector is like a slice of pizza".
+- **timeline**: Add one event: Year "300 BC", Title "Euclid's Elements", Description "Systematized geometry concepts including circles.", Person "Euclid".
+- **funFact**: "The 'Pizza Theorem' states equality of areas of two partitions of a disk."
+- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:
+  1. An `<h3>` titled "Sector Solver".
+  2. Inputs for `Radius` and `Angle (degrees)`.
+  3. A button "Calculate Sector Info".
+  4. JS logic to compute Arc Length and Sector Area and display them.
+  5. A quiz question: "If a central angle is 90 degrees, what fraction of the circle is the sector?" with a text input. Logic to check if user types "1/4" or "0.25".
+
+**MODULE 3: Coordinate Geometry**
+- **title**: "The Coordinate Plane"
+- **videoId**: "TQrzfN2CJpA"
+- **explanation**: Explain the Distance Formula (derived from Pythagorean theorem), Midpoint Formula (average of x's and y's), and Slope Formula ($rise/run$). Mention Parallel lines have equal slopes ($m_1=m_2$) and Perpendicular lines have negative reciprocal slopes ($m_1 \cdot m_2 = -1$).
+- **keyPoints**: Create 4 points: "Distance Formula", "Midpoint Formula", "Slope Formula", "Parallel vs Perpendicular Slopes".
+- **timeline**: Add one event: Year "1637", Title "La Géométrie", Description "Descartes publishes work bridging algebra and geometry.", Person "René Descartes".
+- **funFact**: "Descartes allegedly invented coordinate geometry while watching a fly crawl on his ceiling."
+- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:
+  1. An `<h3>` titled "Coordinate Power Tool".
+  2. Four inputs: `x1`, `y1`, `x2`, `y2`.
+  3. Three buttons: "Get Distance", "Get Midpoint", "Get Slope".
+  4. A display area for the results.
+  5. JS logic to perform these math operations (handle undefined slope for vertical lines).
+  6. A quiz question: "What is the slope of a horizontal line?" (Answer: 0).
+
+**AUDIO GENERATION (TTS)**
+After populating the HTML, use the Python `google-cloud-texttospeech` library to generate audio for all text fields. Use the API key provided in the system prompt. Generate files named `audio-{moduleIndex}-{section}-{subIndex}.mp3`. Update the `audioSources` object in each module with these filenames. If generation fails, hide the audio buttons via CSS.
+
+**FINAL VALIDATION**
+- Ensure `interactiveElement` fields contain REAL HTML/JS strings, not placeholders.
+- Ensure the `modules` array has exactly 3 module objects.
+- Ensure the file remains a single `index.html`.

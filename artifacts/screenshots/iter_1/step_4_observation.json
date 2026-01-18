@@ -1,0 +1,13 @@
+{
+  "text_visible": "{\"success\": true, \"result\": \"Module 1: Introduction\\n1 of 1\\nPrevious\\nNext\\nModule 1: Introduction\\n\\nLesson subtitle or brief description\\n\\nVideo Content\\nVideo content\\nExplanation\\nThis is where the main explanation text will go. It should be clear, concise, and easy to understand.\\nKey Points\\nKey point one\\nKey point two\\nKey point three\\nTimeline\\n1800\\nImportant Event\\nDescription of what happened during this time period.\\nKey Person Name\\n1850\\nMajor Development\\nDescription of the development and its significance.\\nAnother Key Person\\n1900\\nRevolutionary Idea\\nExplanation of the idea and its impact.\\nInfluential Thinker\\nInteractive Activity\\n\\nInteractive content will be placed here (quizzes, exercises, interactive games, etc.)\\n\\nFUN FACT\\nThis is where an interesting fun fact related to the lesson will appear.\\n\\ud83d\\udcac\"}",
+  "interactive_targets": [],
+  "console_errors": [],
+  "verification": {
+    "dom_changed": false,
+    "text_changed": true,
+    "new_console_errors": [],
+    "dialogs": [],
+    "before_sig": "",
+    "after_sig": ""
+  }
+}

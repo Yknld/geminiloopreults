@@ -1,0 +1,13 @@
+{
+  "text_visible": "{\"success\": true, \"result\": \"Module 1: Introduction to Geometry\\nModule 2: Points, Lines, and Planes\\n1 of 2\\nPrevious\\nNext\\nModule 1: Introduction to Geometry\\n\\nThe study of shapes, sizes, and the properties of space.\\n\\nVideo Content\\nExplanation\\nGeometry is a branch of mathematics that deals with the properties and relations of points, lines, surfaces, solids, and higher dimensional analogs. It is one of the oldest branches of mathematics, having arisen in response to practical problems in surveying, construction, and astronomy.\\nKey Points\\nPoints, lines, and planes are the fundamental building blocks of geometry.\\nEuclidean geometry is based on the work of the Greek mathematician Euclid.\\nAngles are formed by two rays sharing a common endpoint called a vertex.\\nTimeline\\nc. 3000 BC\\nAncient Egyptian Geometry\\nEarly geometry used for land surveying and pyramid construction.\\nEgyptian Surveyors\\nc. 300 BC\\nEuclid's Elements\\nEuclid writes 'The Elements', the most influential text",
+  "interactive_targets": [],
+  "console_errors": [],
+  "verification": {
+    "dom_changed": false,
+    "text_changed": false,
+    "new_console_errors": [],
+    "dialogs": [],
+    "before_sig": "",
+    "after_sig": ""
+  }
+}

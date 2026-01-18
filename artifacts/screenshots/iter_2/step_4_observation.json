@@ -1,0 +1,13 @@
+{
+  "text_visible": "{\"success\": true, \"result\": \"Module 1: Introduction to Geometry\\nModule 2: Points, Lines, and Planes\\n2 of 2\\nPrevious\\nNext\\nModule 2: Points, Lines, and Planes\\n\\nUnderstanding the basic elements of geometric space.\\n\\nVideo Content\\nExplanation\\nIn geometry, points, lines, and planes are undefined terms. A point has no dimension, a line has one dimension, and a plane has two dimensions. These concepts form the basis for all other geometric figures.\\nKey Points\\nA point indicates a location and has no size.\\nA line is a straight path that extends infinitely in two directions.\\nA plane is a flat surface that extends infinitely in all directions.\\nTimeline\\nc. 300 BC\\nPostulates of Euclid\\nEuclid defined the basic relationships between points and lines.\\nEuclid\\n18th Century\\nNon-Euclidean Geometry\\nMathematicians began to explore geometries where Euclid's parallel postulate does not hold.\\nGauss, Lobachevsky, Bolyai\\nInteractive Activity\\nHow many dimensions does a plane have?\\nZero O",
+  "interactive_targets": [],
+  "console_errors": [],
+  "verification": {
+    "dom_changed": false,
+    "text_changed": false,
+    "new_console_errors": [],
+    "dialogs": [],
+    "before_sig": "",
+    "after_sig": ""
+  }
+}

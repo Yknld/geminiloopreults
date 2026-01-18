@@ -1,0 +1,455 @@
+{
+  "prompt": "**MANDATORY FIRST STEPS:**\n1.  **Read the existing `index.html` file** in the workspace. This is your template.\n2.  **Edit `index.html` directly**. Do NOT create new HTML files. Do NOT create external CSS/JS files.\n3.  **Locate the `modules` array** in the JavaScript section of the template.\n\n**TASK: POPULATE THE COURSE CONTENT**\nReplace the existing example module in the `modules` array with the following 3 new modules based on the notes. Ensure all Math is rendered using KaTeX (e.g., `\\\\pi r^2`).\n\n**MODULE 1: Introduction to Circles**\n- **title**: \"Introduction to Circles\"\n- **videoId**: \"O-cawByg2aA\"\n- **explanation**: Explain the key parts of a circle: Center (fixed point), Radius (distance from center to edge), Diameter (width through center, d=2r), Chord (segment with endpoints on circle), and Tangent (touches at one point). Introduce the formulas: Circumference ($C = 2\\\\pi r$) and Area ($A = \\\\pi r^2$).\n- **keyPoints**: Create 4 points: \"Radius (r) is distance from center\", \"Diameter (d) is 2 times radius\", \"Circumference is distance around ($2\\\\pi r$)\", \"Area is space inside ($\\pi r^2$)\".\n- **timeline**: Add one event: Year \"250 BC\", Title \"Archimedes\", Description \"Approximated Pi using polygons.\", Person \"Archimedes\".\n- **funFact**: \"A rope tied around the Earth, if raised by just 1 foot all around, would only need to be about 6.28 feet longer!\"\n- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:\n  1. An `<h3>` titled \"Circle Calculator\".\n  2. An `<input>` type number with id `calc-radius` and placeholder `Enter Radius (r)`.\n  3. A `<button>` that triggers a JS function to calculate Diameter, Circumference, and Area based on the input.\n  4. Three `<p>` tags to display the results (e.g., `id=\"res-d\"`, `id=\"res-c\"`, `id=\"res-a\"`).\n  5. A mini-quiz: `<p>If Diameter = 18, Radius = ?</p>`, an input box, and a button that checks if value is 9 and shows \"Correct!\" or \"Try again\" in a span.\n  6. Include the `<script>` tag *inside* this string to handle the logic for these specific inputs.\n\n**MODULE 2: Angles, Arcs, and Sectors**\n- **title**: \"Angles, Arcs, & Sectors\"\n- **videoId**: \"dBIlCD_JF9Q\"\n- **explanation**: Differentiate between Central Angles (vertex at center, equal to arc) and Inscribed Angles (vertex on circle, half the arc). Explain Arc Length formula ($\\frac{\\theta}{360} \\cdot 2\\pi r$) and Sector Area formula ($\\frac{\\theta}{360} \\cdot \\pi r^2$).\n- **keyPoints**: Create 3 points: \"Central Angle = Arc Measure\", \"Inscribed Angle = 1/2 Arc Measure\", \"Sector is like a slice of pizza\".\n- **timeline**: Add one event: Year \"300 BC\", Title \"Euclid's Elements\", Description \"Systematized geometry concepts including circles.\", Person \"Euclid\".\n- **funFact**: \"The 'Pizza Theorem' states equality of areas of two partitions of a disk.\"\n- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:\n  1. An `<h3>` titled \"Sector Solver\".\n  2. Inputs for `Radius` and `Angle (degrees)`.\n  3. A button \"Calculate Sector Info\".\n  4. JS logic to compute Arc Length and Sector Area and display them.\n  5. A quiz question: \"If a central angle is 90 degrees, what fraction of the circle is the sector?\" with a text input. Logic to check if user types \"1/4\" or \"0.25\".\n\n**MODULE 3: Coordinate Geometry**\n- **title**: \"The Coordinate Plane\"\n- **videoId**: \"TQrzfN2CJpA\"\n- **explanation**: Explain the Distance Formula (derived from Pythagorean theorem), Midpoint Formula (average of x's and y's), and Slope Formula ($rise/run$). Mention Parallel lines have equal slopes ($m_1=m_2$) and Perpendicular lines have negative reciprocal slopes ($m_1 \\cdot m_2 = -1$).\n- **keyPoints**: Create 4 points: \"Distance Formula\", \"Midpoint Formula\", \"Slope Formula\", \"Parallel vs Perpendicular Slopes\".\n- **timeline**: Add one event: Year \"1637\", Title \"La G\u00e9om\u00e9trie\", Description \"Descartes publishes work bridging algebra and geometry.\", Person \"Ren\u00e9 Descartes\".\n- **funFact**: \"Descartes allegedly invented coordinate geometry while watching a fly crawl on his ceiling.\"\n- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:\n  1. An `<h3>` titled \"Coordinate Power Tool\".\n  2. Four inputs: `x1`, `y1`, `x2`, `y2`.\n  3. Three buttons: \"Get Distance\", \"Get Midpoint\", \"Get Slope\".\n  4. A display area for the results.\n  5. JS logic to perform these math operations (handle undefined slope for vertical lines).\n  6. A quiz question: \"What is the slope of a horizontal line?\" (Answer: 0).\n\n**AUDIO GENERATION (TTS)**\nAfter populating the HTML, use the Python `google-cloud-texttospeech` library to generate audio for all text fields. Use the API key provided in the system prompt. Generate files named `audio-{moduleIndex}-{section}-{subIndex}.mp3`. Update the `audioSources` object in each module with these filenames. If generation fails, hide the audio buttons via CSS.\n\n**FINAL VALIDATION**\n- Ensure `interactiveElement` fields contain REAL HTML/JS strings, not placeholders.\n- Ensure the `modules` array has exactly 3 module objects.\n- Ensure the file remains a single `index.html`.",
+  "thinking": null,
+  "plan_json": {
+    "course_overview": {
+      "title": "Geometry Mastery: Circles & Coordinates",
+      "audience_level": "High School Geometry Students",
+      "learning_objectives": [
+        "Master the properties and formulas of circles (radius, diameter, circumference, area)",
+        "Understand relationships between angles, arcs, and sectors",
+        "Apply coordinate geometry formulas for distance, midpoint, and slope"
+      ],
+      "modules": [
+        {
+          "module_id": "m1",
+          "module_title": "Introduction to Circles",
+          "why_it_matters": "Circles are fundamental shapes in engineering, architecture, and nature.",
+          "estimated_time_min": 15,
+          "notes_coverage": [
+            "Key Parts (Center, Radius, Diameter, Chord, Tangent)",
+            "Formulas (Circumference, Area)",
+            "Quick Concept Checks"
+          ],
+          "core_concepts": [
+            "Radius vs Diameter",
+            "Circumference = 2\u03c0r",
+            "Area = \u03c0r\u00b2"
+          ],
+          "interactive_experiences": [
+            {
+              "name": "Circle Calculator & Quiz",
+              "type": "simulation",
+              "what_user_does": [
+                "Inputs a radius value to see instant calculations",
+                "Answers a check-for-understanding question about diameter"
+              ],
+              "what_user_sees": [
+                "Dynamic results for Area and Circumference",
+                "Immediate feedback on the quiz question"
+              ],
+              "success_signal": "Green checkmarks and correct numerical values",
+              "common_mistakes": [
+                "Confusing radius and diameter",
+                "Forgetting \u03c0 in the answer"
+              ]
+            }
+          ],
+          "checkpoint_questions": [
+            {
+              "question": "If diameter is 18, what is the radius?",
+              "type": "numeric",
+              "answer": "9",
+              "feedback_correct": "Correct! Radius is half the diameter.",
+              "feedback_wrong": "Remember, radius is d/2."
+            }
+          ],
+          "boss_challenge": {
+            "prompt": "A circular track has a radius of 10 meters. Calculate the distance around it (Circumference) and the space inside it (Area). Use \u03c0 \u2248 3.14.",
+            "hints": [
+              "C = 2 * 3.14 * r",
+              "A = 3.14 * r^2"
+            ],
+            "expected_solution_outline": [
+              "C = 62.8",
+              "A = 314"
+            ],
+            "auto_check_strategy": "Check if inputs match expected values within margin of error"
+          },
+          "youtube": [
+            {
+              "url": "https://www.youtube.com/watch?v=O-cawByg2aA",
+              "why_this_video": "Excellent visual introduction to basic circle concepts.",
+              "where_to_embed": "overview_only",
+              "timestamp_start_sec": 0
+            }
+          ]
+        },
+        {
+          "module_id": "m2",
+          "module_title": "Angles, Arcs, and Sectors",
+          "why_it_matters": "Understanding how angles relate to circle segments is key for advanced geometry and trigonometry.",
+          "estimated_time_min": 20,
+          "notes_coverage": [
+            "Angles & Arcs (Central, Inscribed)",
+            "Arc Length",
+            "Sector Area"
+          ],
+          "core_concepts": [
+            "Central Angle = Arc Measure",
+            "Inscribed Angle = 1/2 Arc Measure",
+            "Sector Area Formula"
+          ],
+          "interactive_experiences": [
+            {
+              "name": "Sector Solver",
+              "type": "simulation",
+              "what_user_does": [
+                "Inputs radius and angle in degrees",
+                "Calculates arc length and sector area"
+              ],
+              "what_user_sees": [
+                "Computed values for Arc Length and Sector Area"
+              ],
+              "success_signal": "Correct calculation displayed",
+              "common_mistakes": [
+                "Forgetting to divide angle by 360",
+                "Confusing Arc Length with Sector Area"
+              ]
+            }
+          ],
+          "checkpoint_questions": [
+            {
+              "question": "If a central angle is 90\u00b0, what fraction of the circle is the sector?",
+              "type": "short",
+              "answer": "1/4",
+              "feedback_correct": "Yes, 90/360 simplifies to 1/4.",
+              "feedback_wrong": "Think about 90 degrees out of a full 360."
+            }
+          ],
+          "boss_challenge": {
+            "prompt": "An inscribed angle intercepts an arc of 80\u00b0. What is the measure of the inscribed angle?",
+            "hints": [
+              "Inscribed angles are half the measure of the intercepted arc."
+            ],
+            "expected_solution_outline": [
+              "40 degrees"
+            ],
+            "auto_check_strategy": "Simple numeric check"
+          },
+          "youtube": [
+            {
+              "url": "https://www.youtube.com/watch?v=dBIlCD_JF9Q",
+              "why_this_video": "Detailed explanation of circle theorems.",
+              "where_to_embed": "after_interaction",
+              "timestamp_start_sec": 0
+            }
+          ]
+        },
+        {
+          "module_id": "m3",
+          "module_title": "Coordinate Geometry",
+          "why_it_matters": "Connecting algebra and geometry allows us to analyze shapes on a grid.",
+          "estimated_time_min": 20,
+          "notes_coverage": [
+            "Distance Formula",
+            "Midpoint Formula",
+            "Slope",
+            "Parallel vs Perpendicular"
+          ],
+          "core_concepts": [
+            "Distance = sqrt((x2-x1)^2 + (y2-y1)^2)",
+            "Midpoint = average of coordinates",
+            "Slope = rise/run"
+          ],
+          "interactive_experiences": [
+            {
+              "name": "Coordinate Power Tool",
+              "type": "simulation",
+              "what_user_does": [
+                "Inputs coordinates for two points (x1,y1) and (x2,y2)",
+                "Clicks buttons to calculate Distance, Midpoint, or Slope"
+              ],
+              "what_user_sees": [
+                "The calculated values displayed dynamically"
+              ],
+              "success_signal": "Values update correctly based on inputs",
+              "common_mistakes": [
+                "Subtracting wrong coordinates",
+                "Mixing up x and y"
+              ]
+            }
+          ],
+          "checkpoint_questions": [
+            {
+              "question": "What is the slope of a horizontal line?",
+              "type": "short",
+              "answer": "0",
+              "feedback_correct": "Correct, zero slope.",
+              "feedback_wrong": "Think about the rise. It doesn't rise."
+            }
+          ],
+          "boss_challenge": {
+            "prompt": "Find the distance between (2, -1) and (8, 7).",
+            "hints": [
+              "Use the distance formula.",
+              "x-diff is 6, y-diff is 8."
+            ],
+            "expected_solution_outline": [
+              "10"
+            ],
+            "auto_check_strategy": "Numeric check"
+          },
+          "youtube": [
+            {
+              "url": "https://www.youtube.com/watch?v=TQrzfN2CJpA",
+              "why_this_video": "Comprehensive one-shot overview of coordinate geometry.",
+              "where_to_embed": "overview_only",
+              "timestamp_start_sec": 0
+            }
+          ]
+        }
+      ]
+    },
+    "global_ui_spec": {
+      "information_architecture": "single_page_tabs",
+      "navigation_model": "top_tabs_desktop_bottom_nav_mobile",
+      "design_tone": "modern",
+      "layout_rules": [
+        "Max width 1200px for main container",
+        "Cards should have 16px padding on mobile, 24px on desktop",
+        "Grid layout for key points (1 column mobile, 2 columns desktop)"
+      ],
+      "interaction_rules": [
+        "Input fields should auto-trigger calculation on button click",
+        "Feedback for quizzes should be immediate and inline (green/red text)",
+        "Avoid alerts; use DOM manipulation to show results"
+      ],
+      "accessibility_rules": [
+        "All inputs must have associated labels",
+        "Buttons must have distinct hover/active states",
+        "Color contrast ratios must meet WCAG AA"
+      ]
+    },
+    "openhands_build_prompt": "**MANDATORY FIRST STEPS:**\n1.  **Read the existing `index.html` file** in the workspace. This is your template.\n2.  **Edit `index.html` directly**. Do NOT create new HTML files. Do NOT create external CSS/JS files.\n3.  **Locate the `modules` array** in the JavaScript section of the template.\n\n**TASK: POPULATE THE COURSE CONTENT**\nReplace the existing example module in the `modules` array with the following 3 new modules based on the notes. Ensure all Math is rendered using KaTeX (e.g., `\\\\pi r^2`).\n\n**MODULE 1: Introduction to Circles**\n- **title**: \"Introduction to Circles\"\n- **videoId**: \"O-cawByg2aA\"\n- **explanation**: Explain the key parts of a circle: Center (fixed point), Radius (distance from center to edge), Diameter (width through center, d=2r), Chord (segment with endpoints on circle), and Tangent (touches at one point). Introduce the formulas: Circumference ($C = 2\\\\pi r$) and Area ($A = \\\\pi r^2$).\n- **keyPoints**: Create 4 points: \"Radius (r) is distance from center\", \"Diameter (d) is 2 times radius\", \"Circumference is distance around ($2\\\\pi r$)\", \"Area is space inside ($\\pi r^2$)\".\n- **timeline**: Add one event: Year \"250 BC\", Title \"Archimedes\", Description \"Approximated Pi using polygons.\", Person \"Archimedes\".\n- **funFact**: \"A rope tied around the Earth, if raised by just 1 foot all around, would only need to be about 6.28 feet longer!\"\n- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:\n  1. An `<h3>` titled \"Circle Calculator\".\n  2. An `<input>` type number with id `calc-radius` and placeholder `Enter Radius (r)`.\n  3. A `<button>` that triggers a JS function to calculate Diameter, Circumference, and Area based on the input.\n  4. Three `<p>` tags to display the results (e.g., `id=\"res-d\"`, `id=\"res-c\"`, `id=\"res-a\"`).\n  5. A mini-quiz: `<p>If Diameter = 18, Radius = ?</p>`, an input box, and a button that checks if value is 9 and shows \"Correct!\" or \"Try again\" in a span.\n  6. Include the `<script>` tag *inside* this string to handle the logic for these specific inputs.\n\n**MODULE 2: Angles, Arcs, and Sectors**\n- **title**: \"Angles, Arcs, & Sectors\"\n- **videoId**: \"dBIlCD_JF9Q\"\n- **explanation**: Differentiate between Central Angles (vertex at center, equal to arc) and Inscribed Angles (vertex on circle, half the arc). Explain Arc Length formula ($\\frac{\\theta}{360} \\cdot 2\\pi r$) and Sector Area formula ($\\frac{\\theta}{360} \\cdot \\pi r^2$).\n- **keyPoints**: Create 3 points: \"Central Angle = Arc Measure\", \"Inscribed Angle = 1/2 Arc Measure\", \"Sector is like a slice of pizza\".\n- **timeline**: Add one event: Year \"300 BC\", Title \"Euclid's Elements\", Description \"Systematized geometry concepts including circles.\", Person \"Euclid\".\n- **funFact**: \"The 'Pizza Theorem' states equality of areas of two partitions of a disk.\"\n- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:\n  1. An `<h3>` titled \"Sector Solver\".\n  2. Inputs for `Radius` and `Angle (degrees)`.\n  3. A button \"Calculate Sector Info\".\n  4. JS logic to compute Arc Length and Sector Area and display them.\n  5. A quiz question: \"If a central angle is 90 degrees, what fraction of the circle is the sector?\" with a text input. Logic to check if user types \"1/4\" or \"0.25\".\n\n**MODULE 3: Coordinate Geometry**\n- **title**: \"The Coordinate Plane\"\n- **videoId**: \"TQrzfN2CJpA\"\n- **explanation**: Explain the Distance Formula (derived from Pythagorean theorem), Midpoint Formula (average of x's and y's), and Slope Formula ($rise/run$). Mention Parallel lines have equal slopes ($m_1=m_2$) and Perpendicular lines have negative reciprocal slopes ($m_1 \\cdot m_2 = -1$).\n- **keyPoints**: Create 4 points: \"Distance Formula\", \"Midpoint Formula\", \"Slope Formula\", \"Parallel vs Perpendicular Slopes\".\n- **timeline**: Add one event: Year \"1637\", Title \"La G\u00e9om\u00e9trie\", Description \"Descartes publishes work bridging algebra and geometry.\", Person \"Ren\u00e9 Descartes\".\n- **funFact**: \"Descartes allegedly invented coordinate geometry while watching a fly crawl on his ceiling.\"\n- **interactiveElement**: **CRITICAL - WRITE ACTUAL HTML CODE STRING HERE**: Create a `div` containing:\n  1. An `<h3>` titled \"Coordinate Power Tool\".\n  2. Four inputs: `x1`, `y1`, `x2`, `y2`.\n  3. Three buttons: \"Get Distance\", \"Get Midpoint\", \"Get Slope\".\n  4. A display area for the results.\n  5. JS logic to perform these math operations (handle undefined slope for vertical lines).\n  6. A quiz question: \"What is the slope of a horizontal line?\" (Answer: 0).\n\n**AUDIO GENERATION (TTS)**\nAfter populating the HTML, use the Python `google-cloud-texttospeech` library to generate audio for all text fields. Use the API key provided in the system prompt. Generate files named `audio-{moduleIndex}-{section}-{subIndex}.mp3`. Update the `audioSources` object in each module with these filenames. If generation fails, hide the audio buttons via CSS.\n\n**FINAL VALIDATION**\n- Ensure `interactiveElement` fields contain REAL HTML/JS strings, not placeholders.\n- Ensure the `modules` array has exactly 3 module objects.\n- Ensure the file remains a single `index.html`."
+  },
+  "course_overview": {
+    "title": "Geometry Mastery: Circles & Coordinates",
+    "audience_level": "High School Geometry Students",
+    "learning_objectives": [
+      "Master the properties and formulas of circles (radius, diameter, circumference, area)",
+      "Understand relationships between angles, arcs, and sectors",
+      "Apply coordinate geometry formulas for distance, midpoint, and slope"
+    ],
+    "modules": [
+      {
+        "module_id": "m1",
+        "module_title": "Introduction to Circles",
+        "why_it_matters": "Circles are fundamental shapes in engineering, architecture, and nature.",
+        "estimated_time_min": 15,
+        "notes_coverage": [
+          "Key Parts (Center, Radius, Diameter, Chord, Tangent)",
+          "Formulas (Circumference, Area)",
+          "Quick Concept Checks"
+        ],
+        "core_concepts": [
+          "Radius vs Diameter",
+          "Circumference = 2\u03c0r",
+          "Area = \u03c0r\u00b2"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Circle Calculator & Quiz",
+            "type": "simulation",
+            "what_user_does": [
+              "Inputs a radius value to see instant calculations",
+              "Answers a check-for-understanding question about diameter"
+            ],
+            "what_user_sees": [
+              "Dynamic results for Area and Circumference",
+              "Immediate feedback on the quiz question"
+            ],
+            "success_signal": "Green checkmarks and correct numerical values",
+            "common_mistakes": [
+              "Confusing radius and diameter",
+              "Forgetting \u03c0 in the answer"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "If diameter is 18, what is the radius?",
+            "type": "numeric",
+            "answer": "9",
+            "feedback_correct": "Correct! Radius is half the diameter.",
+            "feedback_wrong": "Remember, radius is d/2."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "A circular track has a radius of 10 meters. Calculate the distance around it (Circumference) and the space inside it (Area). Use \u03c0 \u2248 3.14.",
+          "hints": [
+            "C = 2 * 3.14 * r",
+            "A = 3.14 * r^2"
+          ],
+          "expected_solution_outline": [
+            "C = 62.8",
+            "A = 314"
+          ],
+          "auto_check_strategy": "Check if inputs match expected values within margin of error"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=O-cawByg2aA",
+            "why_this_video": "Excellent visual introduction to basic circle concepts.",
+            "where_to_embed": "overview_only",
+            "timestamp_start_sec": 0
+          }
+        ]
+      },
+      {
+        "module_id": "m2",
+        "module_title": "Angles, Arcs, and Sectors",
+        "why_it_matters": "Understanding how angles relate to circle segments is key for advanced geometry and trigonometry.",
+        "estimated_time_min": 20,
+        "notes_coverage": [
+          "Angles & Arcs (Central, Inscribed)",
+          "Arc Length",
+          "Sector Area"
+        ],
+        "core_concepts": [
+          "Central Angle = Arc Measure",
+          "Inscribed Angle = 1/2 Arc Measure",
+          "Sector Area Formula"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Sector Solver",
+            "type": "simulation",
+            "what_user_does": [
+              "Inputs radius and angle in degrees",
+              "Calculates arc length and sector area"
+            ],
+            "what_user_sees": [
+              "Computed values for Arc Length and Sector Area"
+            ],
+            "success_signal": "Correct calculation displayed",
+            "common_mistakes": [
+              "Forgetting to divide angle by 360",
+              "Confusing Arc Length with Sector Area"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "If a central angle is 90\u00b0, what fraction of the circle is the sector?",
+            "type": "short",
+            "answer": "1/4",
+            "feedback_correct": "Yes, 90/360 simplifies to 1/4.",
+            "feedback_wrong": "Think about 90 degrees out of a full 360."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "An inscribed angle intercepts an arc of 80\u00b0. What is the measure of the inscribed angle?",
+          "hints": [
+            "Inscribed angles are half the measure of the intercepted arc."
+          ],
+          "expected_solution_outline": [
+            "40 degrees"
+          ],
+          "auto_check_strategy": "Simple numeric check"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=dBIlCD_JF9Q",
+            "why_this_video": "Detailed explanation of circle theorems.",
+            "where_to_embed": "after_interaction",
+            "timestamp_start_sec": 0
+          }
+        ]
+      },
+      {
+        "module_id": "m3",
+        "module_title": "Coordinate Geometry",
+        "why_it_matters": "Connecting algebra and geometry allows us to analyze shapes on a grid.",
+        "estimated_time_min": 20,
+        "notes_coverage": [
+          "Distance Formula",
+          "Midpoint Formula",
+          "Slope",
+          "Parallel vs Perpendicular"
+        ],
+        "core_concepts": [
+          "Distance = sqrt((x2-x1)^2 + (y2-y1)^2)",
+          "Midpoint = average of coordinates",
+          "Slope = rise/run"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Coordinate Power Tool",
+            "type": "simulation",
+            "what_user_does": [
+              "Inputs coordinates for two points (x1,y1) and (x2,y2)",
+              "Clicks buttons to calculate Distance, Midpoint, or Slope"
+            ],
+            "what_user_sees": [
+              "The calculated values displayed dynamically"
+            ],
+            "success_signal": "Values update correctly based on inputs",
+            "common_mistakes": [
+              "Subtracting wrong coordinates",
+              "Mixing up x and y"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "What is the slope of a horizontal line?",
+            "type": "short",
+            "answer": "0",
+            "feedback_correct": "Correct, zero slope.",
+            "feedback_wrong": "Think about the rise. It doesn't rise."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "Find the distance between (2, -1) and (8, 7).",
+          "hints": [
+            "Use the distance formula.",
+            "x-diff is 6, y-diff is 8."
+          ],
+          "expected_solution_outline": [
+            "10"
+          ],
+          "auto_check_strategy": "Numeric check"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=TQrzfN2CJpA",
+            "why_this_video": "Comprehensive one-shot overview of coordinate geometry.",
+            "where_to_embed": "overview_only",
+            "timestamp_start_sec": 0
+          }
+        ]
+      }
+    ]
+  },
+  "global_ui_spec": {
+    "information_architecture": "single_page_tabs",
+    "navigation_model": "top_tabs_desktop_bottom_nav_mobile",
+    "design_tone": "modern",
+    "layout_rules": [
+      "Max width 1200px for main container",
+      "Cards should have 16px padding on mobile, 24px on desktop",
+      "Grid layout for key points (1 column mobile, 2 columns desktop)"
+    ],
+    "interaction_rules": [
+      "Input fields should auto-trigger calculation on button click",
+      "Feedback for quizzes should be immediate and inline (green/red text)",
+      "Avoid alerts; use DOM manipulation to show results"
+    ],
+    "accessibility_rules": [
+      "All inputs must have associated labels",
+      "Buttons must have distinct hover/active states",
+      "Color contrast ratios must meet WCAG AA"
+    ]
+  },
+  "metadata": {
+    "model": "gemini-3-pro-preview",
+    "user_requirements": "Create an interactive geometry course based on the provided notes",
+    "used_custom_notes": true,
+    "custom_notes_length": 2669,
+    "prompt_length": 5157,
+    "has_thinking": false,
+    "youtube_videos_count": 5,
+    "modules_count": 3
+  }
+}
