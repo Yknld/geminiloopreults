@@ -1,0 +1,288 @@
+{
+  "course_overview": {
+    "title": "Geometry Explorer: Circles & Coordinates",
+    "audience_level": "High School Geometry",
+    "learning_objectives": [
+      "Master the anatomy of circles and calculate circumference and area",
+      "Understand the relationship between angles, arcs, and sectors",
+      "Apply the distance and midpoint formulas in the coordinate plane",
+      "Analyze linear slopes and relationships between parallel/perpendicular lines"
+    ],
+    "modules": [
+      {
+        "module_id": "m1",
+        "module_title": "Circle Basics & Measurements",
+        "why_it_matters": "Circles are fundamental shapes in nature and engineering. Understanding their properties is the first step in geometry.",
+        "estimated_time_min": 15,
+        "notes_coverage": [
+          "Key Parts (Center, Radius, Diameter, Chord, Tangent)",
+          "Formulas (Circumference, Area)",
+          "Example calculations"
+        ],
+        "core_concepts": [
+          "Radius vs Diameter",
+          "The number Pi",
+          "Area vs Circumference"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "The Circle Anatomizer",
+            "type": "calculator|simulation",
+            "what_user_does": [
+              "Adjust radius slider",
+              "Toggle visibility of chords and tangents"
+            ],
+            "what_user_sees": [
+              "Dynamic drawing of circle",
+              "Real-time updates of Area and Circumference values"
+            ],
+            "success_signal": "Values update instantly as slider moves",
+            "common_mistakes": [
+              "Confusing radius and diameter",
+              "Forgetting to square the radius for Area"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "If diameter is 14, what is the radius?",
+            "type": "numeric",
+            "answer": "7",
+            "feedback_correct": "Correct! Radius is half the diameter.",
+            "feedback_wrong": "Remember, diameter = 2 * radius."
+          },
+          {
+            "question": "If r = 5, what is the Area (using 3.14 for pi)?",
+            "type": "numeric",
+            "answer": "78.5",
+            "feedback_correct": "Spot on! 25 * 3.14 = 78.5",
+            "feedback_wrong": "Check the formula: Area = pi * r^2"
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "A circular garden has a circumference of 31.4 meters. What is its area?",
+          "hints": [
+            "First find r using C = 2*pi*r",
+            "Then use r to find Area"
+          ],
+          "expected_solution_outline": [
+            "31.4 / (2*3.14) = 5 (radius)",
+            "Area = 3.14 * 5^2 = 78.5"
+          ],
+          "auto_check_strategy": "Numeric input match 78.5"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=O-cawByg2aA",
+            "why_this_video": "Excellent visual intro to basic circle formulas",
+            "where_to_embed": "overview_only",
+            "timestamp_start_sec": 0
+          }
+        ]
+      },
+      {
+        "module_id": "m2",
+        "module_title": "Angles, Arcs & Sectors",
+        "why_it_matters": "Beyond simple size, we need to measure parts of circles, which is crucial for pie charts, pizza slicing, and engineering.",
+        "estimated_time_min": 20,
+        "notes_coverage": [
+          "Central vs Inscribed Angles",
+          "Arc Length Formula",
+          "Sector Area Formula"
+        ],
+        "core_concepts": [
+          "Degrees to Length conversion",
+          "Sector as a fraction of area"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Sector Slice Tool",
+            "type": "simulation",
+            "what_user_does": [
+              "Drag a handle to open/close the angle of a sector",
+              "Adjust radius"
+            ],
+            "what_user_sees": [
+              "Visual pie slice changing size",
+              "Real-time calculation of Arc Length and Sector Area"
+            ],
+            "success_signal": "Visual matches the calculated fraction",
+            "common_mistakes": [
+              "Forgetting to divide angle by 360"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "If central angle is 90°, what fraction of the circle is the sector?",
+            "type": "numeric",
+            "answer": "0.25",
+            "feedback_correct": "Correct! 90/360 is 1/4 or 0.25.",
+            "feedback_wrong": "Think about 90 degrees out of a full 360."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "Find the arc length of a 60° sector with radius 6.",
+          "hints": [
+            "Fraction is 60/360",
+            "Circumference is 2*pi*6"
+          ],
+          "expected_solution_outline": [
+            "1/6 of 12pi = 2pi (approx 6.28)"
+          ],
+          "auto_check_strategy": "Numeric match approx 6.28"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=dr4sHvrHSCI",
+            "why_this_video": "Explains the relationship between angles and chords clearly",
+            "where_to_embed": "overview_only",
+            "timestamp_start_sec": 0
+          }
+        ]
+      },
+      {
+        "module_id": "m3",
+        "module_title": "Coordinate Geometry: Distance & Midpoint",
+        "why_it_matters": "Navigating the 2D plane is essential for mapping, computer graphics, and game design.",
+        "estimated_time_min": 15,
+        "notes_coverage": [
+          "Distance Formula",
+          "Midpoint Formula",
+          "Mini Examples A & B"
+        ],
+        "core_concepts": [
+          "Pythagorean theorem application (Distance)",
+          "Averaging coordinates (Midpoint)"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Coordinate Mapper",
+            "type": "calculator|simulation",
+            "what_user_does": [
+              "Input coordinates for Point A and Point B",
+              "Drag points on a mini-grid (optional)"
+            ],
+            "what_user_sees": [
+              "Line segment drawn between points",
+              "Visual midpoint marker",
+              "Calculation steps shown"
+            ],
+            "success_signal": "Line updates, distance calculated",
+            "common_mistakes": [
+              "Subtracting x from y instead of x from x"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "Find midpoint between (0,0) and (6,2). Input x coordinate.",
+            "type": "numeric",
+            "answer": "3",
+            "feedback_correct": "Yes! (0+6)/2 = 3.",
+            "feedback_wrong": "Average the x values: (x1+x2)/2."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "Find the distance between (2, -1) and (8, 7).",
+          "hints": [
+            "Change in x is 6",
+            "Change in y is 8"
+          ],
+          "expected_solution_outline": [
+            "sqrt(6^2 + 8^2) = sqrt(100) = 10"
+          ],
+          "auto_check_strategy": "Numeric match 10"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=O-cawByg2aA",
+            "why_this_video": "Using generic geometry video as placeholder since no specific coord video provided",
+            "where_to_embed": "overview_only",
+            "timestamp_start_sec": 0
+          }
+        ]
+      },
+      {
+        "module_id": "m4",
+        "module_title": "Slopes & Lines",
+        "why_it_matters": "Slope describes rate of change, a concept critical in physics, economics, and calculus.",
+        "estimated_time_min": 15,
+        "notes_coverage": [
+          "Slope formula",
+          "Positive/Negative/Zero/Undefined slopes",
+          "Parallel vs Perpendicular rules"
+        ],
+        "core_concepts": [
+          "Rise over Run",
+          "Negative Reciprocals"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Slope Slider",
+            "type": "simulation",
+            "what_user_does": [
+              "Adjust slope value slider",
+              "Toggle 'Show Perpendicular Line'"
+            ],
+            "what_user_sees": [
+              "Line rotating on graph",
+              "Rise/Run triangles visual",
+              "Perpendicular line appearing at 90 degrees"
+            ],
+            "success_signal": "Visual rotation matches slope value",
+            "common_mistakes": [
+              "Confusing x and y in numerator/denominator"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "Line A has slope 2. What is the slope of a perpendicular line?",
+            "type": "numeric",
+            "answer": "-0.5",
+            "feedback_correct": "Correct! Negative reciprocal of 2 is -1/2.",
+            "feedback_wrong": "Flip the fraction and change the sign."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "Find the slope of the line passing through (-2,1) and (2,9).",
+          "hints": [
+            "Rise = 9 - 1",
+            "Run = 2 - (-2)"
+          ],
+          "expected_solution_outline": [
+            "8 / 4 = 2"
+          ],
+          "auto_check_strategy": "Numeric match 2"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=O-cawByg2aA",
+            "why_this_video": "Using generic geometry video as placeholder",
+            "where_to_embed": "overview_only",
+            "timestamp_start_sec": 0
+          }
+        ]
+      }
+    ]
+  },
+  "global_ui_spec": {
+    "information_architecture": "single_page_tabs",
+    "navigation_model": "top_tabs_desktop_bottom_nav_mobile",
+    "design_tone": "modern|clean|geometric",
+    "layout_rules": [
+      "Max width 1200px for main container",
+      "Card-based layout for sections",
+      "Vertical stacking on mobile"
+    ],
+    "interaction_rules": [
+      "Inputs trigger instant recalculation (no 'submit' buttons needed for tools)",
+      "Feedback for checkpoints should be immediate and inline"
+    ],
+    "accessibility_rules": [
+      "High contrast text",
+      "Large touch targets for sliders and buttons"
+    ]
+  },
+  "openhands_build_prompt": "**MANDATORY FIRST STEPS - DO THESE BEFORE ANYTHING ELSE:**\n1. **VERIFY FILE EXISTENCE**: Check for `index.html` in your workspace (`/runpod-volume/runs/runs/{run_id}/workspace/index.html` or relative `index.html`).\n2. **USE EDIT COMMAND**: Since `index.html` already exists, you MUST use `edit` or `write` to modify it. NEVER use `create`.\n3. **READ TEMPLATE**: Read the file to understand the `modules` array structure.\n\n**TASK: BUILD THE GEOMETRY COURSE**\n\n**STEP 1: GENERATE AUDIO ASSETS (TTS)**\nUse the following Python script pattern (via terminal) to generate audio for the content below. Replace `{text}` and `{filename}` for each section.\n```python\nfrom google.cloud import texttospeech\nimport os\nclient = texttospeech.TextToSpeechClient()\ninput_text = texttospeech.SynthesisInput(text=\"{text}\")\nvoice = texttospeech.VoiceSelectionParams(language_code=\"en-US\", name=\"en-US-Neural2-D\")\naudio_config = texttospeech.AudioConfig(audio_encoding=texttospeech.AudioEncoding.MP3)\nresponse = client.synthesize_speech(input=input_text, voice=voice, audio_config=audio_config)\nwith open(\"{filename}\", \"wb\") as out:\n    out.write(response.audio_content)\n```\n*Generate audio for every explanation, keyPoint, funFact, and timeline event listed below. Naming: `audio-{module_index}-{section}-{subindex}.mp3`.*\n\n**STEP 2: POPULATE THE MODULES ARRAY**\nEdit `index.html`. Find the `modules` array (likely inside a `<script>` tag) and REPLACE it with these 4 specific modules. Ensure `interactiveElement` contains the **FULL WORKING HTML STRING** (escaped properly if needed inside the JS string).\n\n**MODULE 0: Circle Basics & Measurements**\n- **title**: \"Circle Basics & Measurements\"\n- **videoId**: \"O-cawByg2aA\"\n- **explanation**: \"A circle is the set of all points equidistant from a center point. The radius (r) is the distance from center to edge, while the diameter (d) goes all the way across (d = 2r). We use Pi (approx 3.14) to calculate Circumference (C = 2*pi*r) and Area (A = pi*r^2).\"\n- **keyPoints**: [ { \"text\": \"Radius (r) is center to edge.\", \"audioId\": \"keypoint-0\" }, { \"text\": \"Diameter (d) is 2 times radius.\", \"audioId\": \"keypoint-1\" }, { \"text\": \"Circumference is the distance around.\", \"audioId\": \"keypoint-2\" } ]\n- **timeline**: [ { \"date\": \"250 BC\", \"title\": \"Archimedes\", \"description\": \"Approximated Pi using polygons.\", \"person\": \"Archimedes\", \"audioId\": \"timeline-0\" } ]\n- **funFact**: \"A circle has the largest area for any given perimeter of any shape.\"\n- **interactiveElement**: (Create HTML string: A 'Circle Calculator'. Inputs: Radius. Outputs: Diameter, Circumference, Area (update on input). Visual: A canvas drawing a circle that scales with input. Below this, add 2 Checkpoint Questions: 'If d=14, r=?' (Input, Check Button, Feedback) and 'If r=5, A=?' (Input, Check Button, Feedback). Add Boss Challenge: 'Garden C=31.4, find Area'.)\n\n**MODULE 1: Angles, Arcs & Sectors**\n- **title**: \"Angles, Arcs & Sectors\"\n- **videoId**: \"dr4sHvrHSCI\"\n- **explanation**: \"We can measure parts of a circle using angles. A Central Angle has its vertex at the center. An Inscribed Angle has its vertex on the edge. A Sector is a 'slice of pie', and its area depends on the central angle fraction (angle/360).\"\n- **keyPoints**: [ { \"text\": \"Central angle vertex is at center.\", \"audioId\": \"keypoint-0\" }, { \"text\": \"Arc Length = (angle/360) * Circumference.\", \"audioId\": \"keypoint-1\" }, { \"text\": \"Sector Area = (angle/360) * Total Area.\", \"audioId\": \"keypoint-2\" } ]\n- **timeline**: []\n- **funFact**: \"A full circle is 360 degrees, a tradition dating back to ancient Babylonians.\"\n- **interactiveElement**: (Create HTML string: 'Sector Visualizer'. Sliders: Radius, Angle (0-360). Outputs: Arc Length, Sector Area. Visual: Canvas draws the pie slice. Below this, Checkpoints: '90 degrees is what fraction?' (Input 0.25), Boss Challenge: 'Find arc length of 60 deg sector, r=6'.)\n\n**MODULE 2: Coordinate Geometry: Distance & Midpoint**\n- **title**: \"Coordinate Geometry: Distance & Midpoint\"\n- **videoId**: \"O-cawByg2aA\" (Reuse generic)\n- **explanation**: \"On the Cartesian plane, we use formulas to analyze relationship between points. The Distance Formula is derived from the Pythagorean Theorem. The Midpoint Formula finds the exact average of coordinates.\"\n- **keyPoints**: [ { \"text\": \"Distance = sqrt((x2-x1)^2 + (y2-y1
