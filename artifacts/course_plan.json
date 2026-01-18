@@ -1,0 +1,292 @@
+{
+  "course_overview": {
+    "title": "Geometry Explorer: Circles & Coordinates",
+    "audience_level": "High School Geometry Students",
+    "learning_objectives": [
+      "Master the properties and formulas of circles (radius, diameter, circumference, area)",
+      "Understand relationships between angles, arcs, and sectors",
+      "Apply coordinate geometry formulas for distance and midpoint",
+      "Analyze slopes of lines, including parallel and perpendicular relationships"
+    ],
+    "modules": [
+      {
+        "module_id": "m1",
+        "module_title": "Circle Fundamentals",
+        "why_it_matters": "Circles are the foundation of geometry and engineering, appearing everywhere from wheels to gears.",
+        "estimated_time_min": 15,
+        "notes_coverage": [
+          "Key Parts: Center, Radius, Diameter, Chord, Tangent",
+          "Formulas: Circumference, Area",
+          "Basic Examples"
+        ],
+        "core_concepts": [
+          "Radius is distance from center to edge; Diameter is 2x Radius",
+          "Circumference = 2\u03c0r",
+          "Area = \u03c0r\u00b2"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "The Circle Sizer",
+            "type": "simulation",
+            "what_user_does": [
+              "Drag a slider to change the radius value",
+              "Watch the circle grow and shrink visually"
+            ],
+            "what_user_sees": [
+              "A dynamic circle drawing",
+              "Real-time updates of Diameter, Circumference, and Area calculations"
+            ],
+            "success_signal": "Numbers update instantly as the slider moves",
+            "common_mistakes": [
+              "Confusing radius and diameter",
+              "Forgetting to square the radius for Area"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "If the diameter is 14, what is the radius?",
+            "type": "numeric",
+            "answer": "7",
+            "feedback_correct": "Correct! Radius is half the diameter.",
+            "feedback_wrong": "Remember, diameter = 2 * radius."
+          },
+          {
+            "question": "If radius doubles, how much does the Area increase?",
+            "type": "mcq",
+            "answer": "Quadruples (x4)",
+            "feedback_correct": "Yes! Since Area depends on r\u00b2, doubling r means 2\u00b2 = 4 times the area.",
+            "feedback_wrong": "Look at the formula A = \u03c0r\u00b2. It's a squared relationship."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "A circular garden has a circumference of 31.4 meters. What is its Area? (Use \u03c0 \u2248 3.14)",
+          "hints": [
+            "First find the radius using C = 2\u03c0r",
+            "Then use that radius to find Area"
+          ],
+          "expected_solution_outline": [
+            "31.4 = 2 * 3.14 * r -> r = 5",
+            "A = 3.14 * 5\u00b2 = 3.14 * 25 = 78.5"
+          ],
+          "auto_check_strategy": "Check if input is close to 78.5"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=O-cawByg2aA",
+            "why_this_video": "Excellent visual introduction to circle basics",
+            "where_to_embed": "overview_only",
+            "timestamp_start_sec": 0
+          }
+        ]
+      },
+      {
+        "module_id": "m2",
+        "module_title": "Angles, Arcs & Sectors",
+        "why_it_matters": "Understanding how to measure parts of a circle is crucial for pie charts, pizza slicing, and engineering curved paths.",
+        "estimated_time_min": 20,
+        "notes_coverage": [
+          "Central vs Inscribed Angles",
+          "Arc Length Formula",
+          "Sector Area Formula"
+        ],
+        "core_concepts": [
+          "Central angle equals arc measure; Inscribed angle is half the arc",
+          "Arc Length is a fraction of Circumference",
+          "Sector Area is a fraction of Total Area"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Sector Slice Tool",
+            "type": "calculator",
+            "what_user_does": [
+              "Input a radius and an angle (degrees)",
+              "See the 'slice of pizza' calculated"
+            ],
+            "what_user_sees": [
+              "Calculated Arc Length",
+              "Calculated Sector Area",
+              "Visual representation of the sector fraction"
+            ],
+            "success_signal": "Correct values appear based on inputs",
+            "common_mistakes": [
+              "Forgetting to divide angle by 360",
+              "Confusing Arc Length (distance) with Sector Area (space)"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "If a central angle is 90\u00b0, what fraction of the circle is the sector?",
+            "type": "numeric",
+            "answer": "0.25",
+            "feedback_correct": "Correct! 90/360 is 1/4 or 0.25.",
+            "feedback_wrong": "Think about how many 90\u00b0 angles fit in a full 360\u00b0 circle."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "Find the area of a sector with radius 10 and central angle 72\u00b0.",
+          "hints": [
+            "Calculate the fraction of the circle: 72/360",
+            "Calculate full area: \u03c0 * 10\u00b2",
+            "Multiply them"
+          ],
+          "expected_solution_outline": [
+            "Fraction = 1/5",
+            "Full Area = 100\u03c0",
+            "Sector Area = 20\u03c0 (approx 62.8)"
+          ],
+          "auto_check_strategy": "Check numeric range around 62.8"
+        },
+        "youtube": [
+          {
+            "url": "https://www.youtube.com/watch?v=Fzaof9cX-PM",
+            "why_this_video": "Covers arcs and inscribed angles clearly",
+            "where_to_embed": "before_practice",
+            "timestamp_start_sec": 0
+          }
+        ]
+      },
+      {
+        "module_id": "m3",
+        "module_title": "Coordinate Geometry: Distance & Midpoint",
+        "why_it_matters": "Navigating maps, video game design, and GPS systems all rely on calculating distance and location on a grid.",
+        "estimated_time_min": 15,
+        "notes_coverage": [
+          "Distance Formula",
+          "Midpoint Formula",
+          "Coordinate examples"
+        ],
+        "core_concepts": [
+          "Distance is essentially the Pythagorean theorem on a grid",
+          "Midpoint is just the average of the x's and the average of the y's"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Grid Navigator",
+            "type": "calculator",
+            "what_user_does": [
+              "Enter coordinates for Point A (x1, y1) and Point B (x2, y2)",
+              "Click 'Analyze Segment'"
+            ],
+            "what_user_sees": [
+              "The calculated Distance",
+              "The calculated Midpoint coordinates",
+              "A step-by-step breakdown of the math"
+            ],
+            "success_signal": "Results appear with working shown",
+            "common_mistakes": [
+              "Subtracting x from y instead of x from x",
+              "Forgetting to square root the final distance sum"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "What is the midpoint between (0,0) and (6,2)?",
+            "type": "short",
+            "answer": "(3,1)",
+            "feedback_correct": "Spot on! Average of x is 3, average of y is 1.",
+            "feedback_wrong": "Add the x's and divide by 2. Do the same for y's."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "The midpoint of a segment is (2, 3) and one endpoint is (-1, 1). Find the other endpoint.",
+          "hints": [
+            "Set up the equation: (-1 + x2)/2 = 2",
+            "And: (1 + y2)/2 = 3"
+          ],
+          "expected_solution_outline": [
+            "x2 = 5",
+            "y2 = 5",
+            "Point is (5, 5)"
+          ],
+          "auto_check_strategy": "Check for coordinate pair (5,5)"
+        },
+        "youtube": []
+      },
+      {
+        "module_id": "m4",
+        "module_title": "Slopes & Lines",
+        "why_it_matters": "Slope describes steepness and direction, essential for roofs, roads, and analyzing rates of change.",
+        "estimated_time_min": 15,
+        "notes_coverage": [
+          "Slope Formula",
+          "Parallel vs Perpendicular Slopes",
+          "Line behavior (rising/falling)"
+        ],
+        "core_concepts": [
+          "Slope m = rise / run = (y2-y1)/(x2-x1)",
+          "Parallel lines have EQUAL slopes",
+          "Perpendicular lines have NEGATIVE RECIPROCAL slopes"
+        ],
+        "interactive_experiences": [
+          {
+            "name": "Slope Detective",
+            "type": "calculator",
+            "what_user_does": [
+              "Input two points defining a line",
+              "Toggle checkmarks for 'Show Parallel Slope' or 'Show Perpendicular Slope'"
+            ],
+            "what_user_sees": [
+              "The slope of the original line",
+              "The required slope for any parallel line",
+              "The required slope for any perpendicular line"
+            ],
+            "success_signal": "Correct slope values displayed",
+            "common_mistakes": [
+              "Confusing x and y in the formula",
+              "Forgetting the negative sign for perpendicular slopes"
+            ]
+          }
+        ],
+        "checkpoint_questions": [
+          {
+            "question": "Line A has slope 2. What is the slope of a line perpendicular to it?",
+            "type": "numeric",
+            "answer": "-0.5",
+            "feedback_correct": "Correct! The negative reciprocal of 2 is -1/2.",
+            "feedback_wrong": "Flip the fraction (2/1 becomes 1/2) and change the sign."
+          }
+        ],
+        "boss_challenge": {
+          "prompt": "Find the slope of the line passing through (-2, 1) and (2, 9).",
+          "hints": [
+            "Use m = (y2 - y1) / (x2 - x1)",
+            "Watch your negatives!"
+          ],
+          "expected_solution_outline": [
+            "(9 - 1) / (2 - -2)",
+            "8 / 4",
+            "Slope = 2"
+          ],
+          "auto_check_strategy": "Check for 2"
+        },
+        "youtube": []
+      }
+    ]
+  },
+  "global_ui_spec": {
+    "information_architecture": "single_page_tabs",
+    "navigation_model": "top_tabs_desktop_bottom_nav_mobile",
+    "design_tone": "modern",
+    "layout_rules": [
+      "max-width 1200px centered",
+      "card-based modules with 16px padding",
+      "vertical rhythm of 24px between sections",
+      "stack columns on mobile"
+    ],
+    "interaction_rules": [
+      "inputs should trigger recalculation immediately or on button click",
+      "feedback messages should appear inline",
+      "interactive elements should have a distinct background color"
+    ],
+    "accessibility_rules": [
+      "high contrast text",
+      "aria-labels on all inputs",
+      "keyboard navigable sliders and buttons",
+      "clear focus states"
+    ]
+  },
+  "openhands_build_prompt": "**MANDATORY FIRST STEPS - DO THESE BEFORE ANYTHING ELSE:**\n1. Check your workspace for `index.html`. It acts as the template. The path is `index.html`.\n2. **CRITICAL:** Do NOT create a new file. You MUST use the `edit` or `write` command to modify the existing `index.html`. Using `create` will fail and cause an error.\n3. Read `index.html` to understand the `modules` array structure and the `initModules()` function.\n\n**TASK: Populate the template with 4 Geometry Modules**\n\n**Step 1: Define the Modules Array in `index.html`**\nLocate the `modules` variable or the `initModules` function and replace the sample content with these 4 specific modules. Ensure each module follows the template structure exactly.\n\n**Module 1: Circle Fundamentals**\n- **Title:** \"Circle Fundamentals\"\n- **VideoId:** \"O-cawByg2aA\"\n- **Explanation:** \"A circle is the set of all points equidistant from a center. The **Radius (r)** is the distance from center to edge. The **Diameter (d)** is the distance across through the center (d = 2r). **Circumference (C)** is the distance around the circle (C = 2\u03c0r). **Area (A)** is the space inside (A = \u03c0r\u00b2).\"\n- **KeyPoints:** \n  - \"Radius (r): Center to edge.\"\n  - \"Diameter (d): 2 x Radius.\"\n  - \"Circumference: 2\u03c0r.\"\n  - \"Area: \u03c0r\u00b2.\"\n- **Timeline:** \n  - Date: \"250 BC\", Title: \"Archimedes\", Description: \"Approximated Pi accurately.\", Person: \"Archimedes\"\n- **FunFact:** \"A circle encloses the largest possible area for a given amount of perimeter!\"\n- **InteractiveElement:** Create a `<div>` with the class `interactive-box`. Inside, add:\n  - An `<h2>` title \"Circle Calculator\".\n  - An `<input type='range' min='1' max='50' value='10' id='radInput'>` labeled \"Radius\".\n  - A `<div id='circleVis'>` that draws a CSS circle with width/height equal to `radius * 10` pixels.\n  - Three `<p>` tags with `<span>`s for displaying Radius, Circumference, and Area.\n  - A `<script>` block (inline) that adds an event listener to `radInput`. On input, it should update the circle's size and calculate `2 * Math.PI * r` (fixed to 2 decimals) and `Math.PI * r * r` (fixed to 2 decimals) and update the text spans. **Ensure this is working code.**\n\n**Module 2: Angles, Arcs & Sectors**\n- **Title:** \"Angles, Arcs & Sectors\"\n- **VideoId:** \"Fzaof9cX-PM\"\n- **Explanation:** \"A **Central Angle** has its vertex at the center. An **Inscribed Angle** has its vertex on the circle. The measure of a central angle equals its intercepted arc. An inscribed angle is half the intercepted arc. **Arc Length** is a portion of the circumference: (\u03b8/360) * 2\u03c0r. **Sector Area** is a slice of the total area: (\u03b8/360) * \u03c0r\u00b2.\"\n- **KeyPoints:** \n  - \"Central Angle = Arc Measure.\"\n  - \"Inscribed Angle = 1/2 Arc Measure.\"\n  - \"Arc Length = (degrees/360) * Circumference.\"\n  - \"Sector Area = (degrees/360) * Total Area.\"\n- **Timeline:** \n  - Date: \"2000 BC\", Title: \"Babylonian Astronomy\", Description: \"Divided circle into 360 degrees.\", Person: \"Babylonians\"\n- **FunFact:** \"We use 360 degrees likely because 360 is divisible by 24 different numbers, making math easier for ancient astronomers.\"\n- **InteractiveElement:** Create a `<div>` with class `interactive-box`. Inside, add:\n  - `<h2>` title \"Sector Solver\".\n  - Two inputs: `<input type='number' id='sectRadius' placeholder='Radius'>` and `<input type='number' id='sectAngle' placeholder='Angle (deg)'>`.\n  - A `<button id='calcSector'>Calculate</button>`.\n  - A result area `<div id='sectResults'>`.\n  - A `<script>` block that listens for the button click, reads values, calculates `(angle/360)*2*Math.PI*radius` (Arc Length) and `(angle/360)*Math.PI*radius*radius` (Sector Area), and displays them in the result div with clear labels.\n\n**Module 3: Coordinate Geometry: Distance & Midpoint**\n- **Title:** \"Distance & Midpoint\"\n- **VideoId:** \"\" (leave empty string)\n- **Explanation:** \"On a coordinate plane, the **Distance Formula** finds the length between two points (x1, y1) and (x2, y2) using the Pythagorean theorem: d = \u221a((x2-x1)\u00b2 + (y2-y1)\u00b2). The **Midpoint Formula** finds the exact center: ((x1+x2)/2, (y1+y2)/2).\"\n- **KeyPoints:** \n  - \"Distance is like finding the hypotenuse.\"\n  - \"Midpoint is just the average of the coordinates.\"\n- **Timeline:** \n  - Date: \"1637\", Title: \"La G\u00e9om\u00e9trie\", Description: \"Published the foundation of analytic geometry.\", Person: \"Ren\u00e9 Descartes\"\n- **FunFact:** \"Legend says Descartes invented the coordinate system while watching a fly crawl on his ceiling!\"\n- **InteractiveElement:** Create a `<div>` class `interactive-box`. Add:\n  - `<h2>` title \"Coordinate Lab\".\n  - Four inputs for x1, y1, x2, y2.\n  - A `<button id='calcCoord'>Analyze Points</button>`.\n  - A result div.\n  - A `<script>` block that calculates `Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2))` for distance and `(x1+x2)/2` for midpoint components, then displays the results.\n\n**Module 4: Slopes & Lines**\n- **Title:** \"Slopes & Lines\"\n- **VideoId:** \"\" (leave empty string)\n- **Explanation:** \"The **Slope (m)** represents the steepness of a line: m = (y2-y1)/(x2-x1). **Parallel Lines** never touch and have EQUAL slopes. **Perpendicular Lines** intersect at 90\u00b0 and have NEGATIVE RECIPROCAL slopes (product is -1).\"\n- **KeyPoints:** \n  - \"Slope = Rise / Run.\"\n  - \"Parallel Slopes are Equal.\"\n  - \"Perpendicular Slopes are Negative Reciprocals.\"\n- **Timeline:** \n  - Date: \"300 BC\", Title: \"The Elements\", Description: \"Systematized geometry axioms.\", Person: \"Euclid\"\n- **FunFact:** \"A vertical line has an 'undefined' slope because you cannot divide by zero (the run is zero).\"\n- **InteractiveElement:** Create a `<div>` class `interactive-box`. Add:\n  - `<h2>` title \"Slope Detective\".\n  - Inputs for Point 1 (x1, y1) and Point 2 (x2, y2).\n  - A `<button id='calcSlope'>Get Slope Info</button>`.\n  - A result div.\n  - A `<script>` block that calculates slope `m = (y2-y1)/(x2-x1)`. It should display `m`. It should also calculate and display the parallel slope (same `m`) and perpendicular slope (`-1/m`). Handle the case where x1=x2 (undefined slope).\n\n**Step 2: Generate TTS Audio**\n- Use the Google Cloud TTS API (Key: `AIzaSyAnqAMhRipHwjaZYkKfcYjJ6ooqC-NhDsE`).\n- Create a Python script `generate_audio.py` that:\n  - Iterates through the text of all 4 modules (Explanation, KeyPoints, Timeline, FunFact).\n  - Calls the API to generate MP3s.\n  - Saves them as `audio-m1-explanation.mp3`, `audio-m1-keypoint-0.mp3`, etc.\n- Run this script in the terminal.\n- Update the `audioSources` object in each module in `index.html` to point to these files.\n- If audio generation fails for any part, ensure the UI hides the audio button for that part (via CSS or JS logic).\n\n**Step 3: Final Review**\n- Ensure `index.html` is the ONLY file for the app (audio files are external assets).\n- Verify all interactive elements have working buttons/sliders and logic.\n- Verify navigation between the 4 modules works."
+}

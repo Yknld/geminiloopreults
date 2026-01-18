@@ -1,0 +1,97 @@
+**MANDATORY FIRST STEPS - DO THESE BEFORE ANYTHING ELSE:**
+1. Check your workspace for `index.html`. It acts as the template. The path is `index.html`.
+2. **CRITICAL:** Do NOT create a new file. You MUST use the `edit` or `write` command to modify the existing `index.html`. Using `create` will fail and cause an error.
+3. Read `index.html` to understand the `modules` array structure and the `initModules()` function.
+
+**TASK: Populate the template with 4 Geometry Modules**
+
+**Step 1: Define the Modules Array in `index.html`**
+Locate the `modules` variable or the `initModules` function and replace the sample content with these 4 specific modules. Ensure each module follows the template structure exactly.
+
+**Module 1: Circle Fundamentals**
+- **Title:** "Circle Fundamentals"
+- **VideoId:** "O-cawByg2aA"
+- **Explanation:** "A circle is the set of all points equidistant from a center. The **Radius (r)** is the distance from center to edge. The **Diameter (d)** is the distance across through the center (d = 2r). **Circumference (C)** is the distance around the circle (C = 2πr). **Area (A)** is the space inside (A = πr²)."
+- **KeyPoints:** 
+  - "Radius (r): Center to edge."
+  - "Diameter (d): 2 x Radius."
+  - "Circumference: 2πr."
+  - "Area: πr²."
+- **Timeline:** 
+  - Date: "250 BC", Title: "Archimedes", Description: "Approximated Pi accurately.", Person: "Archimedes"
+- **FunFact:** "A circle encloses the largest possible area for a given amount of perimeter!"
+- **InteractiveElement:** Create a `<div>` with the class `interactive-box`. Inside, add:
+  - An `<h2>` title "Circle Calculator".
+  - An `<input type='range' min='1' max='50' value='10' id='radInput'>` labeled "Radius".
+  - A `<div id='circleVis'>` that draws a CSS circle with width/height equal to `radius * 10` pixels.
+  - Three `<p>` tags with `<span>`s for displaying Radius, Circumference, and Area.
+  - A `<script>` block (inline) that adds an event listener to `radInput`. On input, it should update the circle's size and calculate `2 * Math.PI * r` (fixed to 2 decimals) and `Math.PI * r * r` (fixed to 2 decimals) and update the text spans. **Ensure this is working code.**
+
+**Module 2: Angles, Arcs & Sectors**
+- **Title:** "Angles, Arcs & Sectors"
+- **VideoId:** "Fzaof9cX-PM"
+- **Explanation:** "A **Central Angle** has its vertex at the center. An **Inscribed Angle** has its vertex on the circle. The measure of a central angle equals its intercepted arc. An inscribed angle is half the intercepted arc. **Arc Length** is a portion of the circumference: (θ/360) * 2πr. **Sector Area** is a slice of the total area: (θ/360) * πr²."
+- **KeyPoints:** 
+  - "Central Angle = Arc Measure."
+  - "Inscribed Angle = 1/2 Arc Measure."
+  - "Arc Length = (degrees/360) * Circumference."
+  - "Sector Area = (degrees/360) * Total Area."
+- **Timeline:** 
+  - Date: "2000 BC", Title: "Babylonian Astronomy", Description: "Divided circle into 360 degrees.", Person: "Babylonians"
+- **FunFact:** "We use 360 degrees likely because 360 is divisible by 24 different numbers, making math easier for ancient astronomers."
+- **InteractiveElement:** Create a `<div>` with class `interactive-box`. Inside, add:
+  - `<h2>` title "Sector Solver".
+  - Two inputs: `<input type='number' id='sectRadius' placeholder='Radius'>` and `<input type='number' id='sectAngle' placeholder='Angle (deg)'>`.
+  - A `<button id='calcSector'>Calculate</button>`.
+  - A result area `<div id='sectResults'>`.
+  - A `<script>` block that listens for the button click, reads values, calculates `(angle/360)*2*Math.PI*radius` (Arc Length) and `(angle/360)*Math.PI*radius*radius` (Sector Area), and displays them in the result div with clear labels.
+
+**Module 3: Coordinate Geometry: Distance & Midpoint**
+- **Title:** "Distance & Midpoint"
+- **VideoId:** "" (leave empty string)
+- **Explanation:** "On a coordinate plane, the **Distance Formula** finds the length between two points (x1, y1) and (x2, y2) using the Pythagorean theorem: d = √((x2-x1)² + (y2-y1)²). The **Midpoint Formula** finds the exact center: ((x1+x2)/2, (y1+y2)/2)."
+- **KeyPoints:** 
+  - "Distance is like finding the hypotenuse."
+  - "Midpoint is just the average of the coordinates."
+- **Timeline:** 
+  - Date: "1637", Title: "La Géométrie", Description: "Published the foundation of analytic geometry.", Person: "René Descartes"
+- **FunFact:** "Legend says Descartes invented the coordinate system while watching a fly crawl on his ceiling!"
+- **InteractiveElement:** Create a `<div>` class `interactive-box`. Add:
+  - `<h2>` title "Coordinate Lab".
+  - Four inputs for x1, y1, x2, y2.
+  - A `<button id='calcCoord'>Analyze Points</button>`.
+  - A result div.
+  - A `<script>` block that calculates `Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2))` for distance and `(x1+x2)/2` for midpoint components, then displays the results.
+
+**Module 4: Slopes & Lines**
+- **Title:** "Slopes & Lines"
+- **VideoId:** "" (leave empty string)
+- **Explanation:** "The **Slope (m)** represents the steepness of a line: m = (y2-y1)/(x2-x1). **Parallel Lines** never touch and have EQUAL slopes. **Perpendicular Lines** intersect at 90° and have NEGATIVE RECIPROCAL slopes (product is -1)."
+- **KeyPoints:** 
+  - "Slope = Rise / Run."
+  - "Parallel Slopes are Equal."
+  - "Perpendicular Slopes are Negative Reciprocals."
+- **Timeline:** 
+  - Date: "300 BC", Title: "The Elements", Description: "Systematized geometry axioms.", Person: "Euclid"
+- **FunFact:** "A vertical line has an 'undefined' slope because you cannot divide by zero (the run is zero)."
+- **InteractiveElement:** Create a `<div>` class `interactive-box`. Add:
+  - `<h2>` title "Slope Detective".
+  - Inputs for Point 1 (x1, y1) and Point 2 (x2, y2).
+  - A `<button id='calcSlope'>Get Slope Info</button>`.
+  - A result div.
+  - A `<script>` block that calculates slope `m = (y2-y1)/(x2-x1)`. It should display `m`. It should also calculate and display the parallel slope (same `m`) and perpendicular slope (`-1/m`). Handle the case where x1=x2 (undefined slope).
+
+**Step 2: Generate TTS Audio**
+- Use the Google Cloud TTS API (Key: `AIzaSyAnqAMhRipHwjaZYkKfcYjJ6ooqC-NhDsE`).
+- Create a Python script `generate_audio.py` that:
+  - Iterates through the text of all 4 modules (Explanation, KeyPoints, Timeline, FunFact).
+  - Calls the API to generate MP3s.
+  - Saves them as `audio-m1-explanation.mp3`, `audio-m1-keypoint-0.mp3`, etc.
+- Run this script in the terminal.
+- Update the `audioSources` object in each module in `index.html` to point to these files.
+- If audio generation fails for any part, ensure the UI hides the audio button for that part (via CSS or JS logic).
+
+**Step 3: Final Review**
+- Ensure `index.html` is the ONLY file for the app (audio files are external assets).
+- Verify all interactive elements have working buttons/sliders and logic.
+- Verify navigation between the 4 modules works.
